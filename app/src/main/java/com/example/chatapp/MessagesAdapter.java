@@ -12,17 +12,19 @@ import java.util.List;
 
 public class MessagesAdapter extends RecyclerView.Adapter<MessagesAdapter.MessagesViewHolder> {
 
-
     private List<Message> messages;
 
-
-    public MessagesAdapter(List<Message> messages) {
+    public MessagesAdapter() {
         messages = new ArrayList<>();
     }
 
     public void setMessages(List<Message> messages) {
         this.messages = messages;
         notifyDataSetChanged();
+    }
+
+    public List<Message> getMessages() {
+        return messages;
     }
 
     @NonNull
@@ -34,7 +36,8 @@ public class MessagesAdapter extends RecyclerView.Adapter<MessagesAdapter.Messag
 
     @Override
     public void onBindViewHolder(@NonNull MessagesViewHolder messagesViewHolder, int i) {
-
+        messagesViewHolder.textViewAuthor.setText(messages.get(i).getAuthor());
+        messagesViewHolder.textViewTextOfMessage.setText(messages.get(i).getTextOfMessage());
     }
 
     @Override
@@ -43,15 +46,13 @@ public class MessagesAdapter extends RecyclerView.Adapter<MessagesAdapter.Messag
     }
 
     class MessagesViewHolder extends RecyclerView.ViewHolder {
-
         private TextView textViewAuthor;
-        private TextView textViewMessage;
+        private TextView textViewTextOfMessage;
 
         public MessagesViewHolder(@NonNull View itemView) {
             super(itemView);
-
             textViewAuthor = itemView.findViewById(R.id.textViewAuthor);
-            textViewMessage = itemView.findViewById(R.id.editTextMessage);
+            textViewTextOfMessage = itemView.findViewById(R.id.textViewTextOfMessage);
         }
     }
 
