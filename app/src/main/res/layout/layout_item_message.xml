@@ -8,7 +8,7 @@
     android:padding="8dp">
 
     <TextView
-        android:id="@+id/textViewTitle"
+        android:id="@+id/textViewAuthor"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         tools:text="Автор"
@@ -24,5 +24,5 @@
         android:layout_marginTop="8dp"
         tools:text="Текст сообщения"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textViewTitle" />
+        app:layout_constraintTop_toBottomOf="@+id/textViewAuthor" />
 </android.support.constraint.ConstraintLayout>
